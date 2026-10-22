@@ -1,0 +1,27 @@
+# Dataset and raw traffic (too big for GitHub)
+data/*
+!data/.gitkeep
+*.csv
+!reports/results.csv
+*.pcap
+*.pcapng
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.venv-ryu/
+*.log
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large model files (share them another way if needed)
+models/*.joblib
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

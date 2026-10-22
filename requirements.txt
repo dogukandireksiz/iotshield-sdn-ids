@@ -1,0 +1,14 @@
+# Python 3.10–3.12 (everyone on the team should use the same version)
+# Versions are pinned so results are the same on every machine.
+# Ryu (Mininet test) needs its own environment, see mininet/README.md.
+
+pandas==2.3.3
+numpy==2.2.6
+matplotlib==3.10.9
+seaborn==0.13.2
+scikit-learn==1.7.2
+lightgbm==4.7.0
+imbalanced-learn==0.14.2
+joblib==1.6.0
+streamlit==1.65.0
+jupyter==1.1.1
