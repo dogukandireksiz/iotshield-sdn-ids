@@ -3,6 +3,8 @@ data/*
 !data/.gitkeep
 *.csv
 !reports/results.csv
+!reports/results_*.csv
+!app/sample_flows.csv
 *.pcap
 *.pcapng
 
