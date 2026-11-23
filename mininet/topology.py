@@ -3,6 +3,7 @@ from mininet.node import RemoteController, OVSSwitch
 from mininet.topo import Topo
 from mininet.cli import CLI
 from mininet.log import setLogLevel
+from mininet.link import TCLink
 
 class IDSTopo(Topo):
     def build(self):
@@ -14,10 +15,10 @@ class IDSTopo(Topo):
         h4= self.addHost("h4", ip = "10.0.0.4/24") # attacker
 
         for h in [h1,h2,h3,h4]:
-            self.addLink(h,s1)
+            self.addLink(h,s1, bw=10 )
 
 def run():
-    net = Mininet(topo=IDSTopo(), controller=None, switch=OVSSwitch)
+    net = Mininet(topo=IDSTopo(), controller=None, switch=OVSSwitch, link=TCLink)
     net.addController("c0",controller=RemoteController,ip="127.0.0.1",port=6653)
     net.start()
     CLI(net)
