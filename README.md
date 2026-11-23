@@ -85,7 +85,7 @@ iotshield/
 
 ## Setup
 
-Use **Python 3.10–3.12** (the whole team should use the same version). Package versions in `requirements.txt` are pinned.
+Use **Python 3.11–3.14** (the whole team should use the same version). Package versions in `requirements.txt` are pinned.
 
 ```bash
 git clone https://github.com/<username>/iotshield.git
