@@ -1,12 +1,13 @@
 model,task,imbalance,macro_f1,accuracy,train_time_s,predict_ms_per_flow,notes
-RandomForest,binary,none,0.9123512667967151,0.9131239096582328,11.19,0.00224,
-RandomForest,multi,none,0.6448476159595093,0.8555889894507605,11.75,0.0028,
-LightGBM,binary,none,0.9322447775503686,0.9323841749698509,1.78,0.00094,
-LightGBM,multi,none,0.6469781637595247,0.8823777353674671,5.13,0.00301,
-RandomForest,binary,balanced,0.9124012346975762,0.9131707431301151,12.19,0.00221,
-RandomForest,multi,balanced,0.6429822903687412,0.8552026133077311,12.31,0.00263,
-LightGBM,binary,balanced,0.9319071936507028,0.9320212155627627,1.53,0.00086,
-LightGBM,multi,balanced,0.614834960048454,0.828964160685642,4.77,0.00287,
-LightGBM,multi,smote,0.6222580815776257,0.8323712957650833,22.59,0.00279,
-RandomForest,multi,none,0.6733619187076945,0.8719221627697316,72.19,0.00575,"tuned {'n_estimators': 300, 'min_samples_leaf': 2, 'max_features': 0.3, 'max_depth': 30}"
-LightGBM,multi,none,0.6607051343365906,0.88124202367432,19.71,0.02804,"tuned {'subsample': 0.6, 'num_leaves': 63, 'n_estimators': 500, 'min_child_samples': 50, 'max_depth': 10, 'learning_rate': 0.1, 'colsample_bytree': 0.8}"
+RandomForest,binary,none,0.9123512667967151,0.9131239096582328,10.17,0.00161,
+RandomForest,multi,none,0.6448476159595093,0.8555889894507605,10.55,0.002,
+LightGBM,binary,none,0.9322447775503686,0.9323841749698509,1.31,0.00039,
+LightGBM,multi,none,0.6469781637595247,0.8823777353674671,4.67,0.00149,
+RandomForest,binary,balanced,0.9124012346975762,0.9131707431301151,10.28,0.00148,
+RandomForest,multi,balanced,0.6429822903687412,0.8552026133077311,10.59,0.00198,
+LightGBM,binary,balanced,0.9319071936507028,0.9320212155627627,1.33,0.00043,
+LightGBM,multi,balanced,0.614834960048454,0.828964160685642,4.65,0.00171,
+LightGBM,multi,smote,0.6222580815776257,0.8323712957650833,19.0,0.00166,
+LightGBM,multi,smote_scaled,0.6237810532212407,0.8327108384362304,19.18,0.0021,
+RandomForest,multi,none,0.6733619187076945,0.8719221627697316,245.74,0.01518,"tuned {'n_estimators': 300, 'min_samples_leaf': 2, 'max_features': 0.3, 'max_depth': 30}"
+LightGBM,multi,none,0.6605803735281242,0.8813239822501141,98.54,0.08304,"tuned {'subsample': 0.6, 'num_leaves': 63, 'n_estimators': 500, 'min_child_samples': 50, 'max_depth': 10, 'learning_rate': 0.1, 'colsample_bytree': 0.8}"
