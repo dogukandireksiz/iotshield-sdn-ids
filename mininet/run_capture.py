@@ -14,6 +14,17 @@ from topology import IDSTopo
 CAPTURE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),"captures")
 VICTIM_IP = "10.0.0.1"
 
+def disable_offload(net):
+    """Turn off TSO/GSO/GRO so tcpdump sees real MTU-sized packets, not merged segments."""
+    for host in net.hosts:
+        for intf in host.intfNames():
+            if intf == "lo":
+                continue
+            host.cmd(f"ethtool -K {intf} tso off gso off gro off")
+            state = host.cmd(f"ethtool -k {intf} | grep -E '^(tcp-segmentation|generic-segmentation|generic-receive)-offload'")
+            info(f"*** {host.name} {intf}: {' | '.join(state.split(chr(10))).strip(' |')}\n")
+
+
 def start_services(h1):
     h1.cmd("python3 -m http.server 80  > /dev/null 2>&1 &")
     h1.cmd("iperf -s > /dev/null 2>&1 &")
@@ -63,6 +74,7 @@ def main():
     net.start()
 
     try:
+        disable_offload(net)
         net.pingAll()
         h1 = net.get("h1")
         start_services(h1)
