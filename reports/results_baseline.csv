@@ -1,0 +1,6 @@
+model,task,imbalance,macro_f1,accuracy,train_time_s,predict_ms_per_flow,notes
+LogisticRegression,binary,none,0.9112246787869878,0.9113091126227915,12.22,0.0004,
+LogisticRegression,multiclass,none,0.5693111445283946,0.8505543912234074,28.5,0.00052,
+DecisionTree,binary,none,0.9102506221621641,0.9110632368954091,9.26,0.00038,
+DecisionTree,multiclass,custom_class_weight,0.681023716197683,0.8701073657342903,8.03,0.0003,Optimized with RandomizedSearchCV
+DecisionTree,multiclass,none,0.63482973412692,0.8516901029165544,8.57,0.00037,
