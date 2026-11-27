@@ -27,3 +27,6 @@ models/*.joblib
 .DS_Store
 .vscode/
 .idea/
+
+# Claude Code step logs (local only, see CLAUDE.md section 5)
+claude_logs/
