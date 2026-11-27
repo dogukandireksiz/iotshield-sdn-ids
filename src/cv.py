@@ -207,7 +207,9 @@ def compute_metrics(y_true, y_pred, broken):
 
     recalls = recall_score(y_true, y_pred, labels=CLASSES, average=None, zero_division=0)
     for class_name, value in zip(CLASSES, recalls):
-        if is_multiclass(y_true):
+        # y_true'da hiç olmayan sınıfın recall'u ölçülemez: 0 değil NaN yazılır,
+        # yoksa "model bu sınıfı hiç bulamadı" gibi okunur (ör. sadece Bot+DDoS alt kümesi).
+        if is_multiclass(y_true) and np.any(y_true == class_name):
             metrics["recall_" + class_name] = value
         else:
             metrics["recall_" + class_name] = np.nan
