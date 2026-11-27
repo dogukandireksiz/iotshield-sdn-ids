@@ -1,0 +1,5 @@
+model,task,imbalance,macro_f1,accuracy,train_time_s,predict_ms_per_flow,notes
+LightGBM,multi,weight_alpha=0.5,0.6845174820500649,0.8711377021157021,40.5,0.04194,tuned
+LightGBM,multi,weight_alpha=0.5,0.686879421289162,0.8710206184359962,40.5,0.05038,"tuned, scaling {'Benign': 1.0, 'Bot': 1.144, 'DDoS': 1.144, 'Dos': 1.144, 'Prob': 0.511}"
+RandomForest,multi,none,0.6733619187076945,0.8719221627697316,,0.01213,tuned (best_model.joblib)
+RandomForest,multi,none,0.6828370789360063,0.8702595745179079,,0.01218,"tuned (best_model.joblib), scaling {'Benign': 1.0, 'Bot': 2.236, 'DDoS': 1.308, 'Dos': 0.669, 'Prob': 1.0}"
